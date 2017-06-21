@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+        <!-- Firebase Init--> 
+        <script src="util/firebase.js"></script>
+        <script src="util/config-fb.js"></script> 
+        <title>Home</title>                
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="util/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:#FAFAFA;">
+        <header>          
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="./employee.html" class="brand-logo">Logo</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="./accountemp.html">My Account</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                        <!--Mobile Nav list-->
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="./accountemp.html">My Account</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                    </div>
+                  </nav>
+         
+        </header>
+        <main>
+            <div class="container " style="margin-top: 1%;">
+            <div class="row">
+                
+                
+                <div class="col s12 l12">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab col s3"><a class="active" href="#Car">Car</a></li>
+                        <li class="tab col s3"><a href="#Rent">Rent Service</a></li>
+                        <li class="tab col s3"><a href="#Carpool">Carpool Service</a></li>
+                        <li class="tab col s3"><a href="#Booking">Cancel Booking</a></li>
+                        <li class="tab col s3"><a href="#Completed">Completed Order</a></li>
+                </div>
+                <div id="Car" class="col s12 l12 ">                  
+                    <div class="card-panel">
+                        <div class="row"><div class="col s12"><h5>Add Car</h5></div></div>
+                        <div class="row">
+                            <form class="col s12" id="carForm">
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="carname" type="text" class="validate" required>
+                                    <label for="carname">Car Name</label>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <select id="carType">
+                                    <option  value="Hatchback" selected>Hatchback</option>
+                                    <option  value="Sedan">Sedan</option>
+                                    <option  value="MPV">MPV</option>
+                                    <option  value="SUV">SUV</option>
+                                    <option  value="Crossover">Crossover</option>
+                                    <option  value="Coupe">Coupe</option>
+                                    <option  value="Convertible">Convertible</option>
+                                    </select>
+                                    <label>Select Car Type</label>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="noOfSeats" type="number" class="validate" required>
+                                    <label for="noOfSeats">No of Seats</label>
+                                </div>
+                                </div>
+                                <div class="row">
+                                        <div class="file-field input-field">
+                                        <div class="btn">
+                                        <span>Car Image</span>
+                                        <input type="file" required name="carImg" id="carImg" accept="image/*">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button class="btn waves-effect waves-light blue darken-3 col s4 offset-s8 l4 offset-l8" type="submit" name="carsubmit">Add Car</button>
+                                 </div>
+                             </form>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row"><div class="col s12"><h5>Delete Car</h5></div></div>
+                        <div id='getCarToDelete'></div>
+                    </div>
+                        
+                </div>
+                
+                <div id="Rent" class="col s12">
+                        <div class="card-panel">
+                        <div class="row"><div class="col s12"><h5>Add Service</h5></div></div>
+                        <div class="row">
+                            <form class="col s12" id="rentServiceForm">
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <select id="carIdRent" required>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    </select>
+                                    <label>Select Car</label>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="fareRental" type="number" class="validate" required>
+                                    <label for="fareRental">Enter Fare</label>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <button class="btn waves-effect waves-light blue darken-3 col s4 offset-s8 l4 offset-l8" type="submit">Confirm Booking</button>
+                                 </div>
+                             </form>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row"><div class="col s12"><h5>Modify Service</h5></div></div>
+                        <div id='getRentService'></div>
+                    </div>
+                </div>
+                
+                <div id="Carpool" class="col s12">
+                <div class="card-panel">
+                    <div class="row"><div class="col s12"><h5>Add Service</h5></div></div>
+                    <form id="carpoolForm">
+                        <div class="row">
+                            <div class="input-field col s8">
+                                <input id="routeName" type="text" class="validate" required>
+                                <label for="routeName">Route name</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input id="routeDistance" type="number" class="validate" required>
+                                <label for="routeDistance">Distance</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="startLocation" type="text" class="validate" required>
+                                <label for="startlocation">Start location</label>
+                            </div>
+                            <div class="input-field col s6">
+                                
+                                <input id="endLocation" type="text" class="validate" required>
+                                <label for="endLocation">End location</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="startDate" type="date" class="datepicker" required>
+                                <label for="startDate">Start date</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="endDate" type="date" class="datepicker" required>
+                                <label for="endDate">End date</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="fareCarPool" type="number" class="validate" required>
+                                <label for="fareCarPool">Fare</label>
+                            </div>
+                            <div class="input-field col s6">
+                                
+                                <input id="noOfPassengers" type="number" class="validate" required>
+                                <label for="noOfPassengers">No of passengers</label>
+                            </div>
+                                <div class="input-field col s12">
+                                    <select id="carIdCarPool" required multiple>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    </select>
+                                    <label>Select Cars to add</label>
+                                </div>
+                                <div class="file-field input-field col s12">
+                                        <div class="btn">
+                                        <span>Location Image</span>
+                                        <input type="file" required name="LocationImg" id="LocationImg" accept="image/*">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                        </div>
+                                </div>
+                            <button class="btn waves-effect waves-light blue darken-3 right" type="submit" name="carpoolsubmit">
+                                Add Service
+                            </button>
+                        </div>
+                    </form>
+                        <div class="divider"></div>
+                        <div class="row"><div class="col s12"><h5>Modify Service</h5></div></div>
+                        <div id='getCarpoolToDelete'></div>
+                    </div>
+                </div>
+                
+                <div id="Booking" class="col s12">
+                    <div class="card-panel">
+                        <div class="row"><div class="col s12"><h5>Booking Details</h5></div></div>
+                        <div id="getBooking"></div>
+                    </div>
+                </div>
+                <div id="Completed" class="col s12">
+                    <div class="card-panel">
+                        <div class="row"><div class="col s12"><h5>Completed Orders</h5></div></div>
+                        <div id="getCompleted"></div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            </div>
+        </main>
+    <!-- Compiled and minified JavaScript Import jQuery before materialize.js-->
+    <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="util/materialize.min.js"></script>
+    <script type="text/javascript" src="js/employee.js"></script>
+    <script type="text/javascript" src="js/endConfigs.js"></script>
+    </body>
+</html>

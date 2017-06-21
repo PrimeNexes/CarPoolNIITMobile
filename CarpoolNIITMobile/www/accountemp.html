@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+        <!-- Firebase Init--> 
+        <script src="util/firebase.js"></script>
+        <script src="util/config-fb.js"></script> 
+        <title>Home</title>                
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="util/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:#FAFAFA;">
+        <header>
+
+                  <nav>
+                    <div class="nav-wrapper">
+                        <a href="./employee.html" class="brand-logo">Logo</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="./accountemp.html">My Account</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                        <!--Mobile Nav list-->
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="./accountemp.html">My Account</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                    </div>
+                  </nav>
+         
+        </header>   
+        <main>
+          <div class="container">
+            <div class="card-panel"  style="margin-top:10%">
+            <div class="section">
+                <h5>Your Profile</h5>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s12 m6">
+                            <div class="black-text">Name :</div>
+                        </div>
+                        <div class="col s12 m6">
+                        <div id="employeeProfileName" class="settings-label-readonly-value profile-viewing-email grey-text">Your name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s12 m6">
+                            <div class="settings-label settings-label-text">Email :</div>
+                        </div>
+                        <div class="col s12 m6">
+                            <div id="employeeProfileEmail" class="settings-label-readonly-value profile-viewing-email grey-text">Your Mail</div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+                             
+                
+                </div>    
+        </div>
+        </main>
+              
+   
+    <!-- Compiled and minified JavaScript Import jQuery before materialize.js-->
+    <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="util/materialize.min.js"></script>
+    <script type="text/javascript" src="js/userState.js"></script>
+    <script type="text/javascript" src="js/accountemp.js"></script>
+    <script type="text/javascript" src="js/endConfigs.js"></script>
+    </body>
+</html>
+

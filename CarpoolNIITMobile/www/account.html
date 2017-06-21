@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+        <!-- Firebase Init--> 
+        <script src="util/firebase.js"></script>
+        <script src="util/config-fb.js"></script> 
+        <title>Home</title>                
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="util/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:#FAFAFA;">
+        <header>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="./home.html" class="brand-logo">Logo</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="./account.html">My Account</a></li>
+                            <li><a href="./orders.html">My Orders</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                        <!--Mobile Nav list-->
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="./account.html">My Account</a></li>
+                            <li><a href="./orders.html">My Orders</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                    </div>
+                  </nav>       
+        </header> 
+        <main>
+          <div class="container">
+            <div class="card-panel"  style="margin-top:5%">
+            <div class="section">
+                <h5>Your Profile</h5>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s12 m6">
+                            <div class="black-text">Name :</div>
+                        </div>
+                        <div class="col s12 m6">
+                        <div id="profileName" class="settings-label-readonly-value profile-viewing-email grey-text">Your name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s12 m6">
+                            <div class="settings-label settings-label-text">Email :</div>
+                        </div>
+                        <div class="col s12 m6">
+                            <div id="profileEmail" class="settings-label-readonly-value profile-viewing-email grey-text">Your mail</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s12 m6">
+                            <div class="settings-label settings-label-text">Address :</div>
+                        </div>                  
+                        <div class="input-field col s12 m6">
+                            <textarea id="profileAddress" class="materialize-textarea"></textarea>                     
+                        </div>
+                    
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                            <button id="profileUpdateBtn" href="#update-profile-modal" class="btn blue  darken-3 modal-trigger">Update Profile</button>
+                    </div>
+                </div>
+                </div>
+                    <div class="divider"></div>
+                
+                <div class="section">
+                    <h5>Delete Profile</h5>
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <p> This will delete your entire profile </p>
+                        </div>
+                            <div class="col s12 m6">
+                                    <button id="profileDeleteBtn" data-target="delete-profile-modal" class="btn materialize-red darken-1 modal-trigger">Delete Profile</button>
+                            </div>
+                    </div>
+                    <div id="delete-profile-modal" class="modal">
+                        <div class="modal-content">
+                        <h4>Delete Profile</h4>
+                        <p>Are you sure ?</p>
+                        </div>
+                        <div class="modal-footer">
+                        <a id="profileDeleteAgree" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                             
+                
+                </div>    
+        </div>
+        </main>
+              
+   
+    <!-- Compiled and minified JavaScript Import jQuery before materialize.js-->
+    <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="util/materialize.min.js"></script> 
+    <script type="text/javascript" src="js/account.js"></script>
+    </body>
+</html>

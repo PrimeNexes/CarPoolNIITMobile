@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!-- Firebase Init--> 
+        <script src="util/firebase.js"></script>
+        <script src="util/config-fb.js"></script> 
+        <title>Home</title>                
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="util/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:#FAFAFA;">
+
+    <main>    
+        
+    <div class="container" style="margin-top: 10%;">
+            
+    <div class="row" >
+        
+    <div class="col s12 m12 l6 offset-l3">
+        
+    <div class="card" >
+        
+    <div class="card-content black-text">
+                       
+    <div class="row ">
+      
+     
+        
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width ">
+        <li class="tab col s3"><a  class="active" href="#logintab">Log in</a></li>
+        <li class="tab col s3"><a  href="#signuptab">Sign up</a></li>
+      </ul>
+    </div>
+        
+    <div id="logintab" class="col s12">
+        <div class="row">
+                   
+            <form id="loginform" class="col s12">
+                
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="emailL" type="email" class="validate" required>
+                    <label for="email" data-error="Wrong Email" >Email</label>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="passwordL" type="password" class="validate" required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+                
+            <div class="row">
+                <a class="col s5 l5 offset-5" href="#" id="fogotPassBtn">Forgot Password ?</a>
+                <button class="btn waves-effect waves-light blue darken-3 col s4 offset-s8 l4 offset-l8" type="submit" name="action">Next</button>
+            </div>
+                
+            </form>
+        </div>
+    </div>
+        
+    <div id="signuptab" class="col s12">
+        
+            <div class="row">
+                   
+            <form id="signupform"  class="col s12">
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="fullnameR" type="text" class="validate" required>
+                    <label for="last_name">Full Name</label>
+                </div>
+            </div>  
+                
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="addressR" type="password" class="validate materialize-textarea" required/></textarea>
+                    <label for="password">Address</label>
+                </div>
+            </div> 
+                
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="emailR" type="email" class="validate" required/>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="passwordR" type="password" class="validate" required/>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+                
+            <div class="row">
+                <button class="btn waves-effect waves-light blue darken-3 col s5 offset-s7 l2 offset-l10" type="submit" name="action" >Next</button>
+            </div>
+                
+            </form>
+        </div>
+    </div>
+
+    </div>
+   
+    </div>
+            
+    </div>
+        
+    </div>
+        
+    </div>
+        
+    </div>
+            
+    </main>  
+              
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <!-- Compiled and minified JavaScript Import jQuery before materialize.js-->
+    <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="util/materialize.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    </body>
+</html>

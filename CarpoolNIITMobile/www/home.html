@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+        <!-- Firebase Init--> 
+        <script src="util/firebase.js"></script>
+        <script src="util/config-fb.js"></script> 
+        <title>Home</title>                
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="util/materialize.min.css">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:#FAFAFA;">
+               <header>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="./home.html" class="brand-logo">Logo</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="./account.html">My Account</a></li>
+                            <li><a href="./orders.html">My Orders</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                        <!--Mobile Nav list-->
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="./account.html">My Account</a></li>
+                            <li><a href="./orders.html">My Orders</a></li>
+                            <li><a class="signout">Sign out</a></li>
+                        </ul>
+                    </div>
+                  </nav>       
+        </header> 
+        <main>
+            <div class="container " style="margin-top: 1%;">
+              <div class="row ">
+                <div class="col s12 ">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab col s3"><a class="active" href="#rent">Rent a car</a></li>
+                        <li class="tab col s3"><a href="#pool">Car-pool</a></li>
+                    </ul>
+                </div>
+                <div id="rent" class="col s12">  
+                    <div class="row">  
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-button btn col s12' style="margin-top: 2%" href='#' data-activates='RentCarTypeDropDown'><i class="material-icons left">search</i> Search by Car</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='RentCarTypeDropDown' class='dropdown-content'>
+                            <li><a id='carAll'>All</a></li>
+                            <li><a id='carH'>Hatchback</a></li>
+                            <li><a id='carS'>Sedan</a></li>
+                            <li><a id='carMPV'>MPV</a></li>
+                            <li><a id='carSUV'>SUV</a></li>
+                            <li><a id='carCross'>Crossover</a></li>
+                            <li><a id='carCoupe'>Coupe</a></li>
+                            <li><a id='carConvert'>Convertible</a></li>
+                        </ul>
+                    </div>
+                    <div id='rentWindow'></div>
+
+                </div>
+                  <div id="pool" class="col s12">
+                    <div class="row">  
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-button btn col s12' style="margin-top: 1%" href='#' data-activates='CarpoolTypeDropDown'><i class="material-icons left">search</i> Search by Route</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='CarpoolTypeDropDown' class='dropdown-content'>
+                        </ul>
+                    </div>
+                    <div id='poolWindow'></div>
+                    
+                                                          
+                  </div>
+              </div>
+            </div>
+        </main>
+        <footer>
+            
+        </footer>
+
+    <!-- Compiled and minified JavaScript Import jQuery before materialize.js-->
+    <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="util/materialize.min.js"></script>
+        <script type="text/javascript" src="js/userState.js"></script>
+        <script type="text/javascript" src="js/getDate.js"></script>
+        <script type="text/javascript" src="js/home.js"></script>
+        <script type="text/javascript" src="js/endConfigs.js"></script>
+    </body>
+</html>
