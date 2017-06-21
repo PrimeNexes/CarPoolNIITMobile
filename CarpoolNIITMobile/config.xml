@@ -10,6 +10,8 @@
   <engine name="windows" spec="4.4.2" />
   <content src="index.html" />
   <access origin="*" />
+  <allow-navigation href="*" />
+  <allow-intent href="*" />
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="10.0" />
   <!-- Support for Cordova 5.0.0 plugin system -->
