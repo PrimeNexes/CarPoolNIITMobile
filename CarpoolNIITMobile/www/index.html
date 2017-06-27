@@ -5,8 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-<head>
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+<head>      
         <meta charset="utf-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -22,114 +21,120 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body style="background-color:#FAFAFA;">
-
+        <header>
+            <div id="loadingBar" class="container" style="margin-top: 10%;visibility:hidden;">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+                </div>
+        </header>
     <main>    
-        
-    <div class="container" style="margin-top: 10%;">
-            
-    <div class="row" >
-        
-    <div class="col s12 m12 l6 offset-l3">
-        
-    <div class="card" >
-        
-    <div class="card-content black-text">
-                       
-    <div class="row ">
-      
-     
-        
-    <div class="col s12">
-      <ul class="tabs tabs-fixed-width ">
-        <li class="tab col s3"><a  class="active" href="#logintab">Log in</a></li>
-        <li class="tab col s3"><a  href="#signuptab">Sign up</a></li>
-      </ul>
-    </div>
-        
-    <div id="logintab" class="col s12">
-        <div class="row">
-                   
-            <form id="loginform" class="col s12">
-                
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="emailL" type="email" class="validate" required>
-                    <label for="email" data-error="Wrong Email" >Email</label>
-                    <label for="email">Email</label>
-                </div>
-            </div>
-        
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="passwordL" type="password" class="validate" required>
-                    <label for="password">Password</label>
-                </div>
-            </div>
-                
-            <div class="row">
-                <a class="col s5 l5 offset-5" href="#" id="fogotPassBtn">Forgot Password ?</a>
-                <button class="btn waves-effect waves-light blue darken-3 col s4 offset-s8 l4 offset-l8" type="submit" name="action">Next</button>
-            </div>
-                
-            </form>
-        </div>
-    </div>
-        
-    <div id="signuptab" class="col s12">
-        
-            <div class="row">
-                   
-            <form id="signupform"  class="col s12">
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="fullnameR" type="text" class="validate" required>
-                    <label for="last_name">Full Name</label>
-                </div>
-            </div>  
-                
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="addressR" type="password" class="validate materialize-textarea" required></textarea>
-                    <label for="password">Address</label>
-                </div>
-            </div> 
-                
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="emailR" type="email" class="validate" required/>
-                    <label for="email">Email</label>
-                </div>
-            </div>
-        
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="passwordR" type="password" class="validate" required/>
-                    <label for="password">Password</label>
-                </div>
-            </div>
-                
-            <div class="row">
-                <button class="btn waves-effect waves-light blue darken-3 col s5 offset-s7 l2 offset-l10" type="submit" name="action" >Next</button>
-            </div>
-                
-            </form>
-        </div>
-    </div>
+            <div class="container" style="margin-top: 10%;">
+                <div class="row">
 
-    </div>
-   
-    </div>
-            
-    </div>
-        
-    </div>
-        
-    </div>
-        
-    </div>
-            
-    </main>  
+                    <div class="col s12 m12 l6 offset-l3">
+
+                        <div class="card">
+
+                            <div class="card-content black-text">
+
+                                <div class="row ">
+
+
+
+                                    <div class="col s12">
+                                        <ul class="tabs tabs-fixed-width ">
+                                            <li class="tab col s3"><a class="active" href="#logintab">Log in</a></li>
+                                            <li class="tab col s3"><a href="#signuptab">Sign up</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="logintab" class="col s12">
+                                        <div class="row">
+
+                                            <form id="loginform" class="col s12">
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="emailL" type="email" class="validate" required>
+                                                        <label for="email" data-error="Wrong Email">Email</label>
+                                                        <label for="email">Email</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="passwordL" type="password" class="validate" required>
+                                                        <label for="password">Password</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <a class="col s5 l5 offset-5" href="#" id="fogotPassBtn">Forgot Password ?</a>
+                                                    <button class="btn waves-effect waves-light blue darken-3 col s4 offset-s8 l4 offset-l8" type="submit" name="action">Next</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div id="signuptab" class="col s12">
+
+                                        <div class="row">
+
+                                            <form id="signupform" class="col s12">
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="fullnameR" type="text" class="validate" required>
+                                                        <label for="last_name">Full Name</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <textarea id="addressR" type="password" class="validate materialize-textarea" required></textarea>
+                                                        <label for="password">Address</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="emailR" type="email" class="validate" required />
+                                                        <label for="email">Email</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="passwordR" type="password" class="validate" required />
+                                                        <label for="password">Password</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <button class="btn waves-effect waves-light blue darken-3 col s5 offset-s7 l2 offset-l10" type="submit" name="action">Next</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+</main>  
+
+
               
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
@@ -137,6 +142,7 @@ and open the template in the editor.
     <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="util/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
 
     </body>
 </html>

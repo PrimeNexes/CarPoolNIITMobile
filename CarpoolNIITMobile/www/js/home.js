@@ -1,16 +1,32 @@
-function getRentCar(type){
-$("#rentWindow").html("");
+//Check current user
+function userState() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            Materialize.toast("Welcome " + user.email, 4000);
+            // User is signed in.
+        } else {
+            window.location.href = "./index.html";
+            // No user is signed in.
+        }
+    });
+};
+function getRentCar(type) {
+    $("#rentWindow").html("");
+
 firebase.database().ref('RentService/').on('child_added',function(getRent){
 firebase.database().ref('Car/'+getRent.val().carId).on('value',function(snapshot){
   var carId=snapshot.val();
 
   function getRentCard(){
       console.log(getRent.val().carId);
-        firebase.storage().ref('Car/'+getRent.val().carId).getDownloadURL().then(function(url) {
+      firebase.storage().ref('Car/' + getRent.val().carId).getDownloadURL().then(function (url) {
+
+        $("#loadingBar").css("visibility", "hidden");
+
         $("#rentWindow").append(
             '<div class="row" id="'+snapshot.key+'RentCard">'+
                         '<div class="col s12 m12 l12">'+
-                        '<div class="card horizontal blue-grey darken-1 small">'+
+                        '<div class="card blue-grey darken-1 large">'+
                         '<div class="card-image">'+
                                 '<img src="'+url+'">'+
                                 '<span class="card-title">'+carId.carName+'</span>'+
@@ -94,7 +110,10 @@ $('#'+getCarpool.val().startLocation).click(function(){
     getCarpoolService(getCarpool.val().startLocation);});
 }
 function getCarpoolCard(){
-            firebase.storage().ref('Location/'+getCarpool.key).getDownloadURL().then(function(url) {
+    firebase.storage().ref('Location/' + getCarpool.key).getDownloadURL().then(function (url) {
+
+        $("#loadingBar").css("visibility", "hidden");
+
   $("#poolWindow").append(
             '<div class="row" id="'+getCarpool.key+'CarpoolCard">'+
                         '<div class="col s12 m12 l12">'+
@@ -221,28 +240,36 @@ userState();
 getRentCar();
 getCarpoolService();
 //Search Car
-$("#carH").click(function(){
+    $("#carH").click(function () {
+        $("#loadingBar").css("visibility", "visible");
         getRentCar('Hatchback');
 });
-$("#carS").click(function(){
+    $("#carS").click(function () {
+        $("#loadingBar").css("visibility", "visible");
        getRentCar('Sedan');
 });
-$("#carMPV").click(function(){
+    $("#carMPV").click(function () {
+        $("#loadingBar").css("visibility", "visible");
        getRentCar('MPV');
 });
-$("#carSUV").click(function(){
+    $("#carSUV").click(function () {
+        $("#loadingBar").css("visibility", "visible");
         getRentCar('SUV');
 });
-$("#carCross").click(function(){
+    $("#carCross").click(function () {
+        $("#loadingBar").css("visibility", "visible");
         getRentCar('Crossover');
 });
-$("#carCoupe").click(function(){
+    $("#carCoupe").click(function () {
+        $("#loadingBar").css("visibility", "visible");
         getRentCar('Coupe');
 });
-$("#carConvert").click(function(){
+    $("#carConvert").click(function () {
+        $("#loadingBar").css("visibility", "visible");
         getRentCar('Convertible');
 });
-$("#carAll").click(function(){
+    $("#carAll").click(function () {
+        $("#loadingBar").css("visibility", "visible");
         $("#rentWindow").html('');
         getRentCar();
 });

@@ -11,16 +11,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function getEmail(){
   
-firebase.auth().onAuthStateChanged(function(user) {     
-        $("#profileEmail").html(user.email);      
+    firebase.auth().onAuthStateChanged(function (user) {
+        window.localStorage.setItem("email", user.email);
+              
 });    
 }
 
 function getFullname(){   
 firebase.auth().onAuthStateChanged(function(user) {   
     firebase.database().ref('Users/' + user.uid +'/fullname').once('value').then(function(snapshot) {
+        window.localStorage.setItem("profileName", snapshot.val());
         
-    $("#profileName").html(snapshot.val());
     // ...
     });
 });
@@ -30,8 +31,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 function getAddress(){   
 firebase.auth().onAuthStateChanged(function(user) {   
     
-    firebase.database().ref('Users/' + user.uid+'/address').once('value').then(function(snapshot) {
-    $("#profileAddress").html(snapshot.val());
+    firebase.database().ref('Users/' + user.uid + '/address').once('value').then(function (snapshot) {
+        window.localStorage.setItem("profileAddress", snapshot.val());
+        $("#profileAddress").html(window.localStorage.getItem("profileAddress"));
     // ...
     });
 });
@@ -58,11 +60,17 @@ function setAddress(){
 }
 $(document).ready(function(){
     
-userState();
+    userState();
 
-getFullname();
-getEmail();
-getAddress();
+    getFullname();
+    getEmail();
+    getAddress();
+
+    $("#profileEmail").html(window.localStorage.getItem("email"));
+    $("#profileName").html(window.localStorage.getItem("profileName"));
+    $("#profileAddress").html(window.localStorage.getItem("profileAddress"));
+
+
 
 $("#profileUpdateBtn").click(function(){
     setAddress();

@@ -22,7 +22,8 @@ $(document).ready(function(){
   //userState();  
     
 $("#loginform").submit(function(event){
-event.preventDefault();
+    event.preventDefault();
+    $("#loadingBar").css("visibility", "visible");
 var email = document.getElementById('emailL').value;   
 var password =   document.getElementById('passwordL').value; 
 firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -30,13 +31,15 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   var errorCode = error.code;
   var errorMessage = error.message;
   Materialize.toast(errorMessage, 4000);
+  $("#loadingBar").css("visibility", "hidden");
   
 });
 userState();  
 }); 
        
 $("#signupform").submit(function(){
- event.preventDefault();
+    event.preventDefault();
+    $("#loadingBar").css("visibility", "visible");
 var email = document.getElementById('emailR').value;   
 var password =   document.getElementById('passwordR').value;
 var fullnameR =   document.getElementById('fullnameR').value; 
@@ -50,8 +53,10 @@ updates['Users/' + userId.uid+'/fullname']=fullnameR;
 updates['Users/' + userId.uid+'/address']=addressR;
 firebase.database().ref().update(updates).then(function(){
     Materialize.toast("Done ! Now you will be logged in.", 4000);  
+    $("#loadingBar").css("visibility", "hidden");
 }).catch(function(error) {
     console.log(error);
+    $("#loadingBar").css("visibility", "hidden");
 }); 
 }
 catch(e){
@@ -62,20 +67,23 @@ finally{
 }
 }).catch(function(error) {
   // Handle Errors here.
- Materialize.toast(error.message, 4000);
+    Materialize.toast(error.message, 4000);
+    $("#loadingBar").css("visibility", "hidden");
   // ...
 });
 };
 });
 
-$("#fogotPassBtn").click(function(){
+    $("#fogotPassBtn").click(function () {
+        $("#loadingBar").css("visibility", "visible");
     var email = document.getElementById('emailL').value;
     if(email)
     {
         firebase.auth().sendPasswordResetEmail(email).then(function() {
             Materialize.toast("Check you mail then comeback here.", 4000);
             }, function(error) {
-             Materialize.toast(error.message, 4000);
+                Materialize.toast(error.message, 4000);
+                $("#loadingBar").css("visibility", "hidden");
         });
         
         
@@ -83,6 +91,7 @@ $("#fogotPassBtn").click(function(){
     else{ 
        $( "#emailL" ).focus();
        Materialize.toast("Type your email of the forgotten account above", 4000); 
+       $("#loadingBar").css("visibility", "hidden");
     }
     
 });

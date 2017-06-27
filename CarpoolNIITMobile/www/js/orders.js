@@ -1,7 +1,9 @@
 function getOrder(){
     
-firebase.database().ref('Order').on('child_added',function(snapshot) {
+    firebase.database().ref('Order').on('child_added', function (snapshot) {
+        $("#loadingBar").css("visibility", "hidden");
     if($('#'+snapshot.key).length === 0){
+
     $('#getOrder').append(
                 '<div class="row" id="'+snapshot.key+'">'+
                 '<div class="col s12 m12">'+

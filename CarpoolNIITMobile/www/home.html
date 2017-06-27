@@ -18,6 +18,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body style="background-color:#FAFAFA;">
+
                <header>
                 <nav>
                     <div class="nav-wrapper">
@@ -35,9 +36,15 @@ and open the template in the editor.
                             <li><a class="signout">Sign out</a></li>
                         </ul>
                     </div>
-                  </nav>       
+                  </nav>    
+
+                   <div id="loadingBar" class="progress" style="visibility:visible">
+                       <div class="indeterminate"></div>
+                   </div>
+
         </header> 
         <main>
+
             <div class="container " style="margin-top: 1%;">
               <div class="row ">
                 <div class="col s12 ">
@@ -69,7 +76,7 @@ and open the template in the editor.
                   <div id="pool" class="col s12">
                     <div class="row">  
                         <!-- Dropdown Trigger -->
-                        <a class='dropdown-button btn col s12' style="margin-top: 1%" href='#' data-activates='CarpoolTypeDropDown'><i class="material-icons left">search</i> Search by Route</a>
+                        <a class='dropdown-button btn col s12' style="margin-top: 2%" href='#' data-activates='CarpoolTypeDropDown'><i class="material-icons left">search</i> Search by Route</a>
 
                         <!-- Dropdown Structure -->
                         <ul id='CarpoolTypeDropDown' class='dropdown-content'>
@@ -80,16 +87,14 @@ and open the template in the editor.
                                                           
                   </div>
               </div>
+
             </div>
         </main>
-        <footer>
-            
-        </footer>
+
 
     <!-- Compiled and minified JavaScript Import jQuery before materialize.js-->
     <script type="text/javascript" src="util/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="util/materialize.min.js"></script>
-        <script type="text/javascript" src="js/userState.js"></script>
         <script type="text/javascript" src="js/getDate.js"></script>
         <script type="text/javascript" src="js/home.js"></script>
         <script type="text/javascript" src="js/endConfigs.js"></script>
